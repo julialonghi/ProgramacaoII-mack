@@ -8,7 +8,7 @@ public class Exemplo2 {
             br.lines()
                 .takeWhile(linha -> !linha.trim().equals("FIM"))
                 .map(linha -> linha.split("\\|"))
-                .map(Arrays::toString)
+                .map(v -> AccessLog.from(v[0], v[1], v[2], v[3], v[4], v[5]))
                 .forEach(System.out::println);
         } catch (Exception ex) {
             ex.printStackTrace();
