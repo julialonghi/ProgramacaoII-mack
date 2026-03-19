@@ -1,8 +1,8 @@
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public record AccesLog (String ip, LocalDateTime dataHora, String metodo, String url, int status, int tempoResposta) {
-    public static AccesLog from(String ip, String strDataHora, String modelo, String url, String strStatus, String strTempoResposta) {
+public record AccessLog (String ip, LocalDateTime dataHora, String metodo, String url, int status, int tempoResposta) {
+    public static AccessLog from(String ip, String strDataHora, String modelo, String url, String strStatus, String strTempoResposta) {
         DateTimeFormatter formatador = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         LocalDateTime dataHora;
         dataHora = LocalDateTime.parse(strDataHora, formatador);
