@@ -3,7 +3,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public record AccessLog (String ip, LocalDateTime dataHora, String metodo, String url, int status, int tempoResposta) {
-    public static AccessLog from(String ip, String strDataHora, String modelo, String url, String strStatus, String strTempoResposta) {
+    public static AccessLog from(String ip, String strDataHora, String metodo, String url, String strStatus, String strTempoResposta) {
         DateTimeFormatter formatador = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         LocalDateTime dataHora;
         dataHora = LocalDateTime.parse(strDataHora, formatador);
@@ -19,6 +19,6 @@ public record AccessLog (String ip, LocalDateTime dataHora, String metodo, Strin
             strValor = strTempoResposta.substring(0, strTempoResposta.length()-1);
             tempoResposta = (int)(1000*(Double.parseDouble(strValor)));
         }
-        return new AccesLog(ip, dataHora, metodo, url, status, tempoResposta);
+        return new AccessLog(ip, dataHora, metodo, url, status, tempoResposta);
     }
 }
