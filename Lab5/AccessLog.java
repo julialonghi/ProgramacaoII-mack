@@ -13,7 +13,7 @@ public record AccessLog (String ip, LocalDateTime dataHora, String metodo, Strin
         int tempoResposta = 0;
         if (strTempoResposta.endsWith("ms")) {
             String strValor = strTempoResposta.substring(0, strTempoResposta.length()-2);
-            tempoResposta = Integer.paseInt(strValor);
+            tempoResposta = Integer.parseInt(strValor);
         } else {
             String strValor;
             strValor = strTempoResposta.substring(0, strTempoResposta.length()-1);
